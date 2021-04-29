@@ -75,12 +75,11 @@ button {
     </form>  
 
     <table id="listTable">
+        {%for item in pet%}
         <tr>
-            <td>1: {{pet}}</td>
-            <td>{{breed}}</td>
-            <td>born on</td>
-            <td>{{birthday}}</td>
+        <td>{{ item.text }}</td>
         </tr>
+        {% endfor %}
     </table>
 </body>   
 </html>

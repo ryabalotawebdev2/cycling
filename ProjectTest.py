@@ -29,9 +29,6 @@ class PageTest(unittest.TestCase):
 	 self.assertEqual(inputbox.get_attribute('placeholder'), "Enter your pet name")
 	 
 
-	
-
-
 	 name = self.browser.find_element_by_id('owner')
 	 name.click()
 	 time.sleep(1)
@@ -64,7 +61,7 @@ class PageTest(unittest.TestCase):
 	 Pet = self.browser.find_element_by_id('pet')
 	 Pet.click()
 	 time.sleep(1)
-	 Pet.send_keys('kuma')
+	 Pet.send_keys('Kuma')
 	 time.sleep(1)
 	 Breed = self.browser.find_element_by_id('breed')
 	 Breed.click()
@@ -79,7 +76,7 @@ class PageTest(unittest.TestCase):
 	 btnContinue.click()
 	 time.sleep(2)
 	 self.check_for_rows_in_listtable('1: Shana Puspin born on 08/22/2013')
-	 self.check_for_rows_in_listtable("1: kuma Pomeranian born on 05/25/2012")
+	 self.check_for_rows_in_listtable("1: Kuma Pomeranian born on 05/25/2012")
 	 table = self.browser.find_element_by_id('listTable')
 	 rows = table.find_element_by_tag_name('tr')
 
