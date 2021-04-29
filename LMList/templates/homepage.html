@@ -56,9 +56,9 @@ button {
     <form method="POST">
         <div class="container"> 
             <label>Owner's Name: </label> 
-            <input type="text" id="owner"placeholder="Enter your fullname" name="owner"><br>
+            <input type="text" id="owner" placeholder="Enter your fullname" name="owner"><br>
             <label>Address : </label> 
-            <input type="text" id="address"placeholder="Enter your complete address" name="address">
+            <input type="text" id="address" placeholder="Enter your complete address" name="address">
 
             <label style="font-family:'Original Surfer', cursive ;"> Pet's Name : </label> 
             <input type="text" id="pet"placeholder="Enter your pet name" name="pet" 
@@ -68,6 +68,7 @@ button {
             <input type="text" id="birthday"placeholder="MM/DD/YYYY" name="birthday" >
 
 
+
             <button type="submit" id="btnContinue" name="btnContinue"style="font-size: 16px;">Continue</button> 
            
         </div> 
@@ -75,11 +76,12 @@ button {
     </form>  
 
     <table id="listTable">
-        {%for item in pet%}
         <tr>
-        <td>{{ item.text }}</td>
+            <td>1: {{ pet }}</td>
+            <td>{{ breed }}</td>
+            <td>on</td>
+            <td>{{ birthday }}</td>
         </tr>
-        {% endfor %}
     </table>
 </body>   
 </html>

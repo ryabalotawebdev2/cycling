@@ -12,12 +12,10 @@ class PageTest(unittest.TestCase):
 	 self.browser.get('http://localhost:8000/')
 	 self.assertIn("Owner's Registration",self.browser.title)
 
-	def check_for_rows_in_listtable(self,row_text):
+	def check_for_rows_in_list_table(self,row_text):
 	 table = self.browser.find_element_by_id('listTable')
 	 rows = table.find_elements_by_tag_name('tr')
 	 self.assertIn(row_text, [row.text for row in rows])
-
-
 
 	def test_start_list_and_retrieve_it(self):
 	 self.browser.get('http://localhost:8000/')
@@ -75,8 +73,10 @@ class PageTest(unittest.TestCase):
 	 btnContinue = self.browser.find_element_by_id('btnContinue')
 	 btnContinue.click()
 	 time.sleep(2)
-	 self.check_for_rows_in_listtable('1: Shana Puspin born on 08/22/2013')
-	 self.check_for_rows_in_listtable("1: Kuma Pomeranian born on 05/25/2012")
+	 #self.assertIn('1: Shana Puspin born on 08/22/2013',[row.text for row in rows])
+	 #self.assertIn('1: Kuma Pomeranian born on 05/25/2012',[row.text for row in rows])
+	 self.check_for_rows_in_list_table('1: Shana Puspin on 08/22/2013')
+	 self.check_for_rows_in_list_table("1: Kuma Pomeranian on 05/25/2012")
 	 table = self.browser.find_element_by_id('listTable')
 	 rows = table.find_element_by_tag_name('tr')
 
