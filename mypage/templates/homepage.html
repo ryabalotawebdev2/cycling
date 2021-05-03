@@ -4,7 +4,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&family=Playfair+Display+SC&display=swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title> Owner's Registration </title>
+<title>Owners Registration</title>
 <style> 
 Body {
   font-family:'Original Surfer', cursive ;
@@ -52,8 +52,8 @@ button {
 </style> 
 </head>  
 <body>  
-    <center> <h1> Owner's Registration </h1> </center> 
-    <form method="POST">
+    <center> <h1>Owners Registration</h1> </center> 
+    <form method="POST" action="/LMList/new">
         <div class="container"> 
             <label>Owner's Name: </label> 
             <input type="text" id="owner" placeholder="Enter your fullname" name="owner"><br>
@@ -74,15 +74,19 @@ button {
         </div> 
         {% csrf_token %}
     </form>  
-
-    <table id="listTable">
+    {% for item in items %}
+    <table id="listTable" name=tr>
         <tr>
-            <td>1: {{ pet }}</td>
-            <td>{{ breed }}</td>
-            <td>on</td>
-            <td>{{ birthday }}</td>
+        
+        <td>{{ item.nname }}</td>
+      
+          <td>{{ item.nAddress}}</td>
+    
+        
         </tr>
+         {% endfor %}
     </table>
+
 </body>   
 </html>
 
