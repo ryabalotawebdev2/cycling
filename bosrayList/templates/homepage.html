@@ -1,0 +1,96 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href='https://fonts.googleapis.com/css?family=Bungee+Shade' rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SYSTEM</title>
+<style> 
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+:focus {
+  outline: none;
+}
+body {
+  background: #77bfa1;
+}
+
+div {
+  margin: 3rem auto;
+  max-width: 660px;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+button {
+  overflow: visible;
+  border: 0;
+  padding: 0;
+  margin: 1.8rem;
+
+}
+body {
+  text-align: center;
+  
+  
+}
+
+    
+</style> 
+</head>  
+<body>  
+<center><h1>Event Registration</h1></center>
+<table id="bgf" name="tr">
+<form method="post" action="/bosrayList/new">
+     <fieldset>
+
+<p>
+<label>Email:
+<input id ="email" type="text" name="email" maxlength="30"
+  placeholder="Enter your email" required="required" />
+
+</p>
+
+<p>
+<label>Name:
+<input id ="fullname" type="text" name="fullname" maxlength="30"
+  placeholder="Enter your fullname" required="required" />
+</label> 
+</p>
+</fieldset>
+
+
+<!----- Submit and Reset ------------------------------------------------->
+<tr>
+<td colspan="2" align="center">
+<input id="btnConfirm" type="submit" value="confirm">
+<input type="reset" value="Reset">
+</td>
+</tr>
+</table>
+ {% csrf_token %}
+</form>
+    {% for item in items %}
+    <table id="listTable" name=tr>
+         <tr>
+    <span>fullname</span>
+
+    <th><span>email</span></th> 
+  </tr>
+        <tr>
+        <td>{{ item.email }}</td>
+      
+          <td>{{ item.fullname }}</td>
+    
+        
+        </tr>
+         {% endfor %}
+    </table>
+
+</body>   
+</html>
+
+ 

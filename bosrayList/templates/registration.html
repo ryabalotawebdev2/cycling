@@ -1,0 +1,101 @@
+<html>
+<head>
+<style>
+  
+
+div. {
+  text-decoration: center
+}
+
+  h3 {
+  font-family: Calibri; 
+  font-size: 25pt;         
+  font-style: normal; 
+  font-weight: bold; 
+  color:SlateBlue;
+  text-align: center; 
+  text-decoration: underline
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+table caption {
+  font-family: arial, sans-serif;
+  font-size: 30px;
+  
+}
+
+table th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 15px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+  
+</style>
+  
+<center><h2>CHOOSE YOUR PREPARED KILOMETERS TO RACE</h2></center>
+<table id="bgf" name="tr">
+<form method="post" action="/bosrayList/{{ list.id }}/add_item">
+
+    <fieldset>
+
+ <div>
+  <button class="btn striped-shadow dark"><span>30 kilometers</span></button>
+  <button class="btn striped-shadow dark"><span>50 kilometers</span></button>
+  <button class="btn striped-shadow dark"><span>80 kilometers</span></button>
+ </div>
+  
+
+</fieldset>
+
+
+<p>
+<label>Name:
+<input id ="name" type="text" name="name" maxlength="30"
+  placeholder="Enter your name" required="required" />
+</label> 
+</p>
+
+<p>
+<label>Choose your kilometers:
+<input id ="kilometer" type="number" name="kilometer" maxlength="30"
+  placeholder="Enter your kilometer" required="required" />
+</label> 
+</p>
+
+
+{% csrf_token %}
+<tr>
+<td colspan="2" align="center">
+<input type="submit" value="Submit">
+<input type="reset" value="Reset">
+</td>
+</tr>
+
+  
+    <table id="listTable" name=tr>
+  <caption>List Participants</caption>
+  <tr>
+    <th>NAMES</th>
+    <th>KILOMETERS</th>
+        
+       <tr>
+       {% for item in list.item_set.all %} 
+       <! -- {{ forloop.counter }}:  -->
+        <td>{{ item.name }}</td>
+        <td>{{ item.kilometer }}</td>
+   
+          </tr>
+        {% endfor %}
+    </table>
+
+</body>   
+</html>
+
+ 
