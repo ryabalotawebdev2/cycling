@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class LmlistConfig(AppConfig):
+class bosrayListConfig(AppConfig):
     name = 'bosrayList'

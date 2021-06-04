@@ -27,7 +27,7 @@ class ListViewTest(TestCase):
       response = self.client.get(f'/bosrayList/{list_.id}/')
       self.assertTemplateUsed(response, 'registration.html')
      
-#para sa first entry ng 2nd page
+
    def test_displays_all_list_items(self):        
        list_ = List.objects.create()        
        Item.objects.create(name='ryanbalota@gmail.com(default)', list=list_)        
@@ -41,7 +41,7 @@ class ListViewTest(TestCase):
  
 class NewListTest(TestCase):   
 
- #1ts page
+ 
    def test_redirects_after_POST(self):        
        response = self.client.post('/bosrayList/new', data={'email': 'A new email','fullname':'A new fullname'})                     
        new_list = List.objects.first()        
@@ -49,7 +49,7 @@ class NewListTest(TestCase):
        
        
 
-  #2ndd page to test
+  
 class NewItemTest(TestCase):
    def test_can_save_a_POST_request_to_an_existing_list(self):       
       other_list = List.objects.create()        
@@ -64,7 +64,7 @@ class NewItemTest(TestCase):
       new_item = Item.objects.first()        
       self.assertEqual(new_item.name, 'A new existing name')       
       self.assertEqual(new_item.list, correct_list)
-   #eto din   
+     
    def test_redirects_to_list_view(self):        
       other_list = List.objects.create()        
       correct_list = List.objects.create()        

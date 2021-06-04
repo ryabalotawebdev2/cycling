@@ -38,6 +38,17 @@ body {
   
 }
 
+table, td{
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  text-align: center;
     
 </style> 
 </head>  
@@ -49,36 +60,38 @@ body {
 
 <p>
 <label>Email:
-<input id ="email" type="text" name="email" maxlength="30"
+<input id ="email" type="text" name="email" maxlength="25"
   placeholder="Enter your email" required="required" />
 
 </p>
 
 <p>
 <label>Name:
-<input id ="fullname" type="text" name="fullname" maxlength="30"
+<input id ="fullname" type="text" name="fullname" maxlength="25"
   placeholder="Enter your fullname" required="required" />
 </label> 
 </p>
 </fieldset>
 
 
-<!----- Submit and Reset ------------------------------------------------->
+
 <tr>
-<td colspan="2" align="center">
+<td colspan="10" align="center">
 <input id="btnConfirm" type="submit" value="confirm">
-<input type="reset" value="Reset">
+<input type="reset" value="Clear">
 </td>
 </tr>
 </table>
  {% csrf_token %}
 </form>
     {% for item in items %}
-    <table id="listTable" name=tr>
+    <table id="listTable" name='tr'>
          <tr>
-    <span>fullname</span>
 
-    <th><span>email</span></th> 
+      <th style="color=maroon;">Email|</th>
+    <th style="color=maroon;">|Fullname</th>
+
+  
   </tr>
         <tr>
         <td>{{ item.email }}</td>

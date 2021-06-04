@@ -4,7 +4,7 @@ from selenium.webdriver.common.keys import Keys
 import time
 from selenium.common.exceptions import WebDriverException
 
-MAX_WAIT = 3
+RayRay_WAIT = 3
 class PageTest(LiveServerTestCase):
 
 
@@ -26,8 +26,8 @@ class PageTest(LiveServerTestCase):
 	 self.browser = webdriver.Firefox()
 
 	def test_browser_title(self):
-	 self.browser.get('http://localhost:8000/')
-	 #self.browser.get(self.live_server_url)
+	 #elf.browser.get('http://localhost:8000/')
+	 self.browser.get(self.live_server_url)
 	 self.assertIn('SYSTEM',self.browser.title)
 	 header_text = self.browser.find_element_by_tag_name('h1').text
 	 self.assertIn('Event Registration', header_text)
