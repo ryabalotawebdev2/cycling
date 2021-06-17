@@ -3,53 +3,52 @@ from django.db import models
 
 
 class Participant(models.Model):
-	name = models.CharField(max_length=50,  default='')
-	address = models.CharField(max_length=50,  default='')
+	name = models.CharField(max_length=50, default='')
+	address = models.CharField(max_length=50, default='')
 	email= models.EmailField(default='')
 	
 	def __str__(self):
 		return self.name
 
-class Membership(models.Model):
+class Profile(models.Model):
 	participant = models.ForeignKey(Participant, on_delete=models.CASCADE)
-	age= models.CharField(max_length=50,  default='')
-	gender= models.CharField(max_length=50,  default='')
-	choices=('M', 'Male'),('F', 'Female')
+	age = models.CharField(max_length=50, default='')
+	gender = models.CharField(max_length=50, default='')
+	('M', 'Male'),('F', 'Female')
 	numbers = models.CharField(max_length=64)
 	team = models.CharField(max_length=64)
+	kilometers = models.CharField(max_length=50, default='')
 
 	def __str__(self):
 		return self.name
 	
 
-class Event(models.Model):
+class Program(models.Model):
     partcipant = models.ForeignKey(Participant, on_delete = models.CASCADE)
-    eventtype = models.CharField(max_length=50,  default='')
-    category = models.CharField(max_length=50,  default='')
-    details = models.CharField(max_length=50,  default='')
+    eventtype = models.CharField(max_length=50, default='')
+    category = models.CharField(max_length=50, default='')
+    details = models.CharField(max_length=50, default='')
 
     def __str__(self):
     	return self.name
 
 class Location(models.Model):
-	event  = models.ForeignKey(Event, on_delete=models.CASCADE)
 	time_date = models.DateTimeField(null=True, blank=True)
-	location = models.CharField(max_length=50,  default='')
+	place = models.CharField(max_length=50, default='')
 
 	def __str__(self):
 		return self.name
 
-
-class Status(models.Model):
+class Feedback(models.Model):
     status_health = models.CharField(max_length=50,  default='')
-    remarks = models.CharField(max_length=50,  default='')
-    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    remarks = models.CharField(max_length=50, default='')
+
+
 
     def __str__(self):
     	return self.name
 
-
-
+   
 
     
 

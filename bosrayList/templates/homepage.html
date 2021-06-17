@@ -3,60 +3,80 @@
 <head>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href='https://fonts.googleapis.com/css?family=Bungee+Shade' rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link url(https://fonts.googleapis.com/css?family=Open+Sans);>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SYSTEM</title>
-<style> 
-*, :after, :before {
-  box-sizing: border-box;
+<title>CCyling</title>
+
+<style>
+html {
+  height:100%;
+  background-image: black (to right top, #8e44ad 0%, #3498db 100%);
+
 }
 
-:focus {
-  outline: none;
-}
-body {
-  background: #77bfa1;
+nav {
+  max-width: 960px;
+  mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, gray 25%, gray 75%, black (255, 255, 255, 0) 100%);
+  margin: 0 auto;
+  padding: 0px 0;
 }
 
-div {
-  margin: 3rem auto;
-  max-width: 660px;
-  width: 100%;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
+nav ul {
+  text-align: center;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
 }
-button {
-  overflow: visible;
-  border: 0;
-  padding: 0;
-  margin: 1.8rem;
 
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  padding: 18px;
+  font-family: "Open Sans";
+  text-transform:uppercase;
+  color: black(0, 35, 122, 0.5);
+  font-size: 18px;
+  text-decoration: none;
+  display: block;
+}
+
+nav ul li a:hover {
+  box-shadow: 0 0 10px black, inset 0 0 1px orange ;
+  background: rgba(255, 255, 255, 0.1);
+  color: black;
 }
 body {
   text-align: center;
-  
-  
-}
+   
+  }
 
-table, td{
-  border: 1px solid black;
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td {
-  text-align: center;
-    
-</style> 
+</style>
 </head>  
-<body>  
-<center><h1>Event Registration</h1></center>
+
+ <nav>
+  <ul>
+    <li><a href="homepage.html"><i class="icon-home"></i> Home </a></li>
+    <li><a href="registration.html"><i class="icon-user"></i> Profile</a></li>
+    <li><a href="model3.html"><i class="icon-envelope"></i> Program</a></li>
+    <li><a href="models4.html"><i class="icon-tag"></i> Location</a></li>
+    <li><a href="models5.html"><i class="icon-briefcase"></i> Feeback</a></li>
+     <li><a href="Contact.html"><i class=""></i> |Contact</a></li>
+     <li><a href="About.html"><i class=""></i> |About</a></li>
+  </ul>
+</nav>
+
+<center><h1>SIGN UP CYCLIST</h1></center>
 <table id="bgf" name="tr">
 <form method="post" action="/bosrayList/new">
-     <fieldset>
+<body>
+<p>
+<label>Address:
+<input id ="address" type="text" name="address" maxlength="25"
+  placeholder="Enter your Address" required="required" />
+
+</p>
 
 <p>
 <label>Email:
@@ -71,25 +91,21 @@ td {
   placeholder="Enter your fullname" required="required" />
 </label> 
 </p>
-</fieldset>
 
-
-
-<tr>
 <td colspan="10" align="center">
 <input id="btnConfirm" type="submit" value="confirm">
 <input type="reset" value="Clear">
-</td>
-</tr>
+
 </table>
  {% csrf_token %}
 </form>
     {% for item in items %}
-    <table id="listTable" name='tr'>
+    <table >
          <tr>
 
       <th style="color=maroon;">Email|</th>
     <th style="color=maroon;">|Fullname</th>
+    <th style="color=maroon;">|Address</th>
 
   
   </tr>
@@ -97,13 +113,15 @@ td {
         <td>{{ item.email }}</td>
       
           <td>{{ item.fullname }}</td>
+
+          <td>{{ item.address }}</td>
     
         
         </tr>
          {% endfor %}
     </table>
 
-</body>   
+ </body>
 </html>
 
  

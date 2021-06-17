@@ -5,16 +5,15 @@
 <style>
 html {
   height:100%;
-  background-image: white (to right top, #8e44ad 0%, #3498db 100%);
-  background-color: white;
-
+  background-image:white(to right top, #8e44ad 0%, #3498db 100%);
+  background-color: white: 
 }
 
 nav {
   max-width: 960px;
   mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
   margin: 0 auto;
-  padding:0px 0;
+  padding: 0px 0;
 }
 
 nav ul {
@@ -42,10 +41,10 @@ nav ul li a:hover {
   background: rgba(255, 255, 255, 0.1);
   color: black;
 }
- body {
-  text-align: center;
- }
 
+body{
+  text-align: center;
+}
 </style>
 </head>  
 
@@ -60,50 +59,30 @@ nav ul li a:hover {
     <li><a href="About.html"><i class=""></i> |About</a></li>
   </ul>
 </nav>
-<center><h2>FILL UP</h2></center>
+  
+<center><h2>FEEDBACK</h2></center>
 <table id="bgf" name="tr">
-<form method="post" action="/bosrayList/{{ list.id }}/add_item"> 
-</form>
+<form method="post" action="/bosrayList/{{ list.id }}/add_item">
 
 <body>
+
 <p>
-<label>age :
-<input id ="age" type="text" name="age" maxlength="25"
+<label>  status_health :
+<input id ="health" type="text" name="health" maxlength="25"
   placeholder="Enter your name" required="required" />
 </label> 
 </p>
 
 <p>
-<label>gender  :
-<input id ="gender" type="text" name="gender" maxlength="25"
+<label> remarks :
+<input id ="remark" type="text" name="remark" maxlength="25"
   placeholder="Enter your name" required="required" />
 </label> 
 </p>
 
-<p>
-<label>number :
-<input id ="number" type="text" name="number" maxlength="25"
-  placeholder="Enter your name" required="required" />
-</label> 
-</p>
-
-<p>
-<label>team :
-<input id ="team" type="text" name="team" maxlength="25"
-  placeholder="Enter your name" required="required" />
-</label> 
-</p>
-
-<p>
-<label>Choose your kilometers:</label> 
-<select id ="kilometer" type="number" name="kilometer" maxlength="25"
-  placeholder="Enter your kilometer" required="required" />
-    <option value="30">newbie</option>
-    <option value="50">amatuer</option>
-    <option value="80">pro</option>
-  </select>
-</p>
 </body>
+
+
 {% csrf_token %}
 <tr>
 <td colspan="10" align="center">
@@ -117,16 +96,14 @@ nav ul li a:hover {
   <caption>List Participants</caption>
   <fieldset>
   <tr>
-     <th>kilometer</th>
-     <th>team</th>
-</body> 
-    
-        </tr>
+     <th>status_health</th>
+    <th>remarks</th>
+            </tr>
        <tr>
        {% for item in list.item_set.all %} 
        <! -- {{ forloop.counter }}:  -->
-        <td>{{ item.team }}</td>
-        <td>{{ item.kilometer }}</td>
+        <td>{{ item.health }}</td>
+        <td>{{ item.remark }}</td>
         
    
           </tr>
@@ -134,6 +111,7 @@ nav ul li a:hover {
         {% endfor %}
     </table>
 
+</body>   
 </html>
 
  

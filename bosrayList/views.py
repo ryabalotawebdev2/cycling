@@ -1,14 +1,30 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from bosrayList.models import Participant, Membership, Event, Location, Status
-
+from bosrayList.models import Participant, Profile, Program, Location, Feedback
 
 def home_page(request):
-    membership = Membership.objects.all()
-    return render(request, 'homepage.html',{'membership' : membership})
-    
+  #  profile = Profile.objects.all()
+    return render(request, 'homepage.html')
+def registrate(request):
+  #  profile = Profile.objects.all()
+    return render(request, 'registration.html')
+def modelsss(request):
+  #  profile = Profile.objects.all()
+    return render(request, 'model3.html')
+def modelssss(request):
+  #  profile = Profile.objects.all()
+    return render(request, 'models4.html')
+def modelsssss(request):
+  #  profile = Profile.objects.all()
+    return render(request, 'models5.html')
+def contacts(request):
+  #  profile = Profile.objects.all()
+    return render(request, 'Contact.html') 
+def abouts(request):
+  #  profile = Profile.objects.all()
+    return render(request, 'About.html')      
 
-
+'''
 def view_list(request, membership_id):
     participant_ =Participant.objects.get(id=participant_id)
     return render(request, 'registration.html', {'participant': participant_})
@@ -29,7 +45,9 @@ def add_item(request, list_id):
     return redirect(f'/bosrayList/{participant_.id}/')
 
 
-'''def dataManipulation(request):
+
+
+ def dataManipulation(request):
     vparticipant = Participant (name ="fullname", address ="brgy.", email="@gmail") 
     vparticipant.save()
     
@@ -55,6 +73,6 @@ def add_item(request, list_id):
 
     qs = Participant.objects.order_by('name')
     for x in qs:
-        res += x.name + x.address +x.email'<br>'''
+        res += x.name + x.address +x.email'<br> 
 
-
+'''
