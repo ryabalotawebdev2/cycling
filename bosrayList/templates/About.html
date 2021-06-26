@@ -1,196 +1,288 @@
 <!DOCTYPE html>
-<html lang="en">
-<style> body {
-  color: #222222;
-  font-size: 1em;
-  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<style>
+  
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 10px;
+  padding: 50px;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
 }
-
-nav{
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding bottom: 50px;
+  background: white;
+}
+.container{
+  max-width: 700px;
   width: 100%;
-  height:80px ;
-  background-color: #0008;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+.container .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+.container .title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: #9b59b6;
+}
+ form .gender-details .gender-title{
+  font-size: 20px;
+  font-weight: 500;
+ }
+ form .category{
+   display: flex;
+   width: 80%;
+   margin: 14px 0 ;
+   justify-content: space-between;
+ }
+ form .category label{
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+ }
+ form .category label .dot{
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+ #dot-1:checked ~ .category label .one,
+ #dot-2:checked ~ .category label .two,
+ #dot-3:checked ~ .category label .three{
+   background: #9b59b6;
+   border-color: #d9d9d9;
+ }
+ form input[type="radio"]{
+   display: none;
+ }
+ form .button{
+   height: 45px;
+   margin: 35px 0
+ }
+ form .button input{
+   height: 100%;
+   width: 100%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+ }
+ form .button input:hover{
+  /* transform: scale(0.99); */
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+  }
+ @media(max-width: 584px){
+ .container{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category{
+    width: 100%;
+  }
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .container .content .category{
+    flex-direction: column;
+  }
+}
 
-  line-height: 50px;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
-nav ul{
-  float: right;
-  margin-right: 50px;
+nav{
+ position: fixed;
+ left: 0;
+ top: 0;
+ width: 100%;
+ height: 75px;
+ background: #2980b9;
+ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
-nav ul li{
-  list-style: none;
-  display: inline-block;
-  transition: 0.8s all;
-
+nav .navbar{
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ height: 100%;
+ max-width: 90%;
+ background: #2980b9;
+ margin: auto;
 }
-nav ul li:hover{
-  background-color: #99938a;
-  
-}
-nav ul li a{
+nav .navbar .logo a{
+  color: #fff;
+  font-size: 27px;
+  font-weight: 600;
   text-decoration: none;
+}
+nav .navbar .menu{
+  display: flex;
+}
+.navbar .menu li{
+  list-style: none;
+  margin: 0 15px;
+}
+.navbar .menu li a{
   color: #fff;
-  padding: 30px;
- 
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+}@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+html {
+  height:100%;
+  background-image: white to right top, #8e44ad 0%, #3498db 100%;
+   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+nav {
+  max-width: white;
+  margin: 0 auto;
+  padding:0px 0;
+}
+
+nav ul {
+  text-align: center;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  padding: 18px;
+  font-family: "Open Sans";
+  text-transform:uppercase;
+  color: rgba(0, 35, 122, 0.5);
+  font-size: 18px;
+  text-decoration: none;
+  display: block;
+}
+
+nav ul li a:hover {
+  box-shadow: 0 0 10px black, inset 0 0 1px orange ;
+  background: rgba(255, 255, 255, 0.1);
+  color: black;
 }
 
 
-ul{
-  float: right;
-  list-style-type: none;
-  margin-top: 4px;
-  
-}
-ul li
-{
-  display:inline-block;
-}
-ul li a
-{
-  text-decoration:none ;
-  color: #fff;
-  padding: 5px 20px;
-  border: 1px solid transparent;
-  transition: 0.6s ease;
-  font-size: 30px;
-}
-
-.masthead-heading,
-.masthead-intro {
-text-align: center;
-}
-
-.masthead {
-padding: 6em 0;
-background-image: url('aboutus.jpg');
-background-size: cover;
-background-repeat: no-repeat;
-border-top: solid 1em #FFCF33;
-}
-
-.masthead-intro {
-
-  margin-bottom: 0.1em;
-
-  font-family: "Gentium Book Basic", Georgia, serif;
-  font-size: 2em;
-}
-
-.masthead-heading {
-  
-  color: #F1C863;
-  margin-top: -0.2em;
-  font-family: "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: bold;
-  font-size: 6em;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-}
-
-.introduction-section{
-  max-width: 38em;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2em;
-}
-
-.introduction-section {
-
-  font-weight: 300;
-  letter-spacing: 0.05em;
-}
-
-
-section > h1 {
-  margin-top: 2em;
-}
-
-
-.masthead-heading,
-.masthead-intro {
-text-align: center;
-}
-
-.masthead {
-padding: 6em 0;
-background-image: url('aboutus.jpg');
-background-size: cover;
-background-repeat: no-repeat;
-border-top: solid 1em #FFCF33;
-}
-
-.masthead-intro {
-margin-bottom: 0.1em;
-font-family: "lato", Georgia, serif;
-  font-size: 2em;
-  color: rgb(223, 203, 28);
-}
-
-.masthead-heading {
-margin-top: -0.2em;
-font-family: "lato", "lato", sans-serif;
-font-weight: bold;
-font-size: 6em;
-letter-spacing: -0.02em;
-text-transform: uppercase;
-}
-.introduction  {
-  
-  font-weight: 300;
-  letter-spacing: 0.05em;
-}
-h2 {
- 
-  font-family: "Gentium Book Basic", Georgia, serif;
-  font-size: 1.2em;
-  font-weight: bold;
-}
-
-.introduction-section{
-  max-width: 38em;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2em;
-}
-
-
-
-@media only screen and (max-width: 500px) {
-  .masthead {
-      padding: 3em 0;
-  }
-  .masthead-heading {
-      font-size: 3em;
-  }
-  .content-footer {
-      padding: 2em 2.5em;
-}
-}
 </style>
-    <head>
-        <meta charset="UTF-8">
-        <title>ABOUT</title>
-    <link rel="stylesheet" href="about.css">
-    
-  </head>
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+   <meta charset="UTF-8">
+ <link rel="stylesheet" href="style.css">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
   <nav>
-    <ul>
-      <li><a href="About.html">Back</a></li>
-    </ul>
-    
-    </nav>
-    <body>
-      
-    <header class='masthead'>
-      <h1 class='masthead-heading'>ABOUT US</h1>
-      </header>
-      <section class="introduction-section">
-        <p>A bicycle rider is called a cyclist, or bicyclist.These  have allowed for a proliferation of specialized designs for many types of cycling.</p>
-        <P>Bicycles are widely used for transportation, recreation, and sport (see cycling). Throughout the world, bicycles are essential to moving people and goods in areas where there are few automobiles.</P>
-      </section>
-    
-      
-     
-    </body>
+    <div class="navbar">
+      <div class="logo"><a href="homepage.html">CCyling</a></div>
+      <ul class="menu">
+   <li><a href="bosrayList/homepage.html"> Home </a></li>
+    <li><a href="bosrayList/registration.html"> Profile</a></li>
+    <li><a href="bosrayList/model3.html"> Program</a></li>
+    <li><a href="bosrayList/models4.html">Location</a></li>
+    <li><a href="bosrayList/models5.html"> Feeback</a></li>
+     <li><a href="bosrayList/Contact.html">|Contact</a></li>
+     <li><a href="bosrayList/About.html">  |About</a></li>
+      </ul>
+    </div>
+  </nav>
+  </div>
+</body>
 </html>
- 
+<body>
+  <div class="container">
+    <div class="title">About Us</div>
+    <div class="content">
+      <form action="model3.html">
+       
+       <p>          This CCyling System is to help the partcipant to join online registration to enter the fun race or event. At Bicycle Sports, we are passionate about bicycles. We believe that bikes offer a simple solution to many of our communities’ complex problems. Bikes are great for your personal health and for the health of our environment. Bikes can help you save money on transportation, and bikes can provide you with endless miles of fun with your family and friends. </p>
+         
+      <div class="input-box button">
+          <input type="submit" name="" value="Back">
+          <a href="model3.html" value="Back"></a>
+
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

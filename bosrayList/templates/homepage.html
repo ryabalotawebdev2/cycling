@@ -1,25 +1,216 @@
-<!DOCTYPE html> 
-<html> 
-<head>
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href='https://fonts.googleapis.com/css?family=Bungee+Shade' rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link url(https://fonts.googleapis.com/css?family=Open+Sans);>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CCyling</title>
 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
 <style>
+  
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 10px;
+  padding: 50px;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding bottom: 50px;
+  background: white;
+}
+.container{
+  max-width: 700px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+.container .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+.container .title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: #9b59b6;
+}
+ form .gender-details .gender-title{
+  font-size: 20px;
+  font-weight: 500;
+ }
+ form .category{
+   display: flex;
+   width: 80%;
+   margin: 14px 0 ;
+   justify-content: space-between;
+ }
+ form .category label{
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+ }
+ form .category label .dot{
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+ #dot-1:checked ~ .category label .one,
+ #dot-2:checked ~ .category label .two,
+ #dot-3:checked ~ .category label .three{
+   background: #9b59b6;
+   border-color: #d9d9d9;
+ }
+ form input[type="radio"]{
+   display: none;
+ }
+ form .button{
+   height: 45px;
+   margin: 35px 0
+ }
+ form .button input{
+   height: 100%;
+   width: 100%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+ }
+ form .button input:hover{
+  /* transform: scale(0.99); */
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+  }
+ @media(max-width: 584px){
+ .container{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category{
+    width: 100%;
+  }
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .container .content .category{
+    flex-direction: column;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+nav{
+ position: fixed;
+ left: 0;
+ top: 0;
+ width: 100%;
+ height: 75px;
+ background: #2980b9;
+ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+nav .navbar{
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ height: 100%;
+ max-width: 90%;
+ background: #2980b9;
+ margin: auto;
+}
+nav .navbar .logo a{
+  color: #fff;
+  font-size: 27px;
+  font-weight: 600;
+  text-decoration: none;
+}
+nav .navbar .menu{
+  display: flex;
+}
+.navbar .menu li{
+  list-style: none;
+  margin: 0 15px;
+}
+.navbar .menu li a{
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+}@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 html {
   height:100%;
-  background-image: black (to right top, #8e44ad 0%, #3498db 100%);
-
+  background-image: white to right top, #8e44ad 0%, #3498db 100%;
+   background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
 nav {
-  max-width: 960px;
-  mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, gray 25%, gray 75%, black (255, 255, 255, 0) 100%);
+  max-width: white;
   margin: 0 auto;
-  padding: 0px 0;
+  padding:0px 0;
 }
 
 nav ul {
@@ -36,7 +227,7 @@ nav ul li a {
   padding: 18px;
   font-family: "Open Sans";
   text-transform:uppercase;
-  color: black(0, 35, 122, 0.5);
+  color: rgba(0, 35, 122, 0.5);
   font-size: 18px;
   text-decoration: none;
   display: block;
@@ -47,81 +238,102 @@ nav ul li a:hover {
   background: rgba(255, 255, 255, 0.1);
   color: black;
 }
-body {
-  text-align: center;
-   
-  }
+
+#listable {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#listable td, #listable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#listable tr:nth-child(even){background-color: #f2f2f2;}
+
+#listable tr:hover {background-color: #ddd;}
+
+#listable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #616161;
+  color: white;
+}
+
 
 </style>
-</head>  
 
- <nav>
-  <ul>
-    <li><a href="homepage.html"><i class="icon-home"></i> Home </a></li>
-    <li><a href="registration.html"><i class="icon-user"></i> Profile</a></li>
-    <li><a href="model3.html"><i class="icon-envelope"></i> Program</a></li>
-    <li><a href="models4.html"><i class="icon-tag"></i> Location</a></li>
-    <li><a href="models5.html"><i class="icon-briefcase"></i> Feeback</a></li>
-     <li><a href="Contact.html"><i class=""></i> |Contact</a></li>
-     <li><a href="About.html"><i class=""></i> |About</a></li>
-  </ul>
-</nav>
-
-<center><h1>SIGN UP CYCLIST</h1></center>
-<table id="bgf" name="tr">
-<form method="post" action="/bosrayList/new">
-<body>
-<p>
-<label>Address:
-<input id ="address" type="text" name="address" maxlength="25"
-  placeholder="Enter your Address" required="required" />
-
-</p>
-
-<p>
-<label>Email:
-<input id ="email" type="text" name="email" maxlength="25"
-  placeholder="Enter your email" required="required" />
-
-</p>
-
-<p>
-<label>Name:
-<input id ="fullname" type="text" name="fullname" maxlength="25"
-  placeholder="Enter your fullname" required="required" />
-</label> 
-</p>
-
-<td colspan="10" align="center">
-<input id="btnConfirm" type="submit" value="confirm">
-<input type="reset" value="Clear">
-
-</table>
- {% csrf_token %}
-</form>
-    {% for item in items %}
-    <table >
-         <tr>
-
-      <th style="color=maroon;">Email|</th>
-    <th style="color=maroon;">|Fullname</th>
-    <th style="color=maroon;">|Address</th>
-
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+   <meta charset="UTF-8">
+ <link rel="stylesheet" href="style.css">
   
-  </tr>
-        <tr>
-        <td>{{ item.email }}</td>
-      
-          <td>{{ item.fullname }}</td>
-
-          <td>{{ item.address }}</td>
-    
-        
-        </tr>
-         {% endfor %}
-    </table>
-
- </body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <nav>
+    <div class="navbar">
+      <div class="logo"><a href="/homepage">CCyling</a></div>
+      <ul class="menu">
+   <li><a href="/home_page"> Home </a></li>
+    <li><a href="/registration"> Profile</a></li>
+    <li><a href="/model3"> Program</a></li>
+    <li><a href="/models4">Location</a></li>
+    <li><a href="/models5"> Feeback</a></li>
+     <li><a href="/Contact">|Contact</a></li>
+     <li><a href="/About">  |About</a></li>
+      </ul>
+    </div>
+  </nav>
+  </div>
+</body>
 </html>
+<body>
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form method="POST" action="registration.html">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" id= "_name_" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Address</span>
+            <input type="text" id= "_address_" placeholder="Enter your address" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" id= "_email_" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" id= "_number_" placeholder="Enter your number" required>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Register">
+          <a href="model3.html" value="Register"></a>
+        </div>
+      </form>
+      <table id="listable" name="tr">
+      <th>Full Name</th>
+      <th>Email</th>
+      <th>Phone</th>
 
- 
+ <tr> {% for sender in senders %}
+      
+            <td> <a >{{sender.name}}</a></td>
+            <td>{{sender.address}}</td>
+      <td>{{sender.email}}</td>
+    </tr> {% endfor %}
+</table>
+    </div>
+  </div>
+
+</body>
+</html>
