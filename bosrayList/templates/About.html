@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
@@ -239,29 +238,6 @@ nav ul li a:hover {
   color: black;
 }
 
-#listable {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-#listable td, #listable th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-#listable tr:nth-child(even){background-color: #f2f2f2;}
-
-#listable tr:hover {background-color: #ddd;}
-
-#listable th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #616161;
-  color: white;
-}
-
 
 </style>
 
@@ -277,15 +253,15 @@ nav ul li a:hover {
 <body>
   <nav>
     <div class="navbar">
-      <div class="logo"><a href="/homepage">CCyling</a></div>
+      <div class="logo"><a href="homepage.html">CCyling</a></div>
       <ul class="menu">
-   <li><a href="/home_page"> Home </a></li>
-    <li><a href="/registration"> Profile</a></li>
-    <li><a href="/model3"> Program</a></li>
-    <li><a href="/models4">Location</a></li>
-    <li><a href="/models5"> Feeback</a></li>
-     <li><a href="/Contact">|Contact</a></li>
-     <li><a href="/About">  |About</a></li>
+   <li><a href="bosrayList/homepage.html"> Home </a></li>
+    <li><a href="bosrayList/registration.html"> Profile</a></li>
+    <li><a href="bosrayList/model3.html"> Program</a></li>
+    <li><a href="bosrayList/models4.html">Location</a></li>
+    <li><a href="bosrayList/models5.html"> Feeback</a></li>
+     <li><a href="bosrayList/Contact.html">|Contact</a></li>
+     <li><a href="bosrayList/About.html">  |About</a></li>
       </ul>
     </div>
   </nav>
@@ -294,44 +270,17 @@ nav ul li a:hover {
 </html>
 <body>
   <div class="container">
-    <div class="title">Registration</div>
+    <div class="title">About Us</div>
     <div class="content">
-      <form method="POST" action="registration.html">
-        <div class="user-details">
-          <div class="input-box">
-            <span class="details">Full Name</span>
-            <input type="text" id= "_name_" placeholder="Enter your name" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Address</span>
-            <input type="text" id= "_address_" placeholder="Enter your address" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Email</span>
-            <input type="text" id= "_email_" placeholder="Enter your email" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Phone Number</span>
-            <input type="text" id= "_number_" placeholder="Enter your number" required>
-          </div>
-        </div>
-        <div class="button">
-          <input type="submit" value="Register">
-          <a href="model3.html" value="Register"></a>
-        </div>
-      </form>
-      <table id="listable" name="tr">
-      <th>Full Name</th>
-      <th>Email</th>
-      <th>Phone</th>
+      <form action="model3.html">
+       
+       <p>          This CCyling System is to help the partcipant to join online registration to enter the fun race or event. At Bicycle Sports, we are passionate about bicycles. We believe that bikes offer a simple solution to many of our communities’ complex problems. Bikes are great for your personal health and for the health of our environment. Bikes can help you save money on transportation, and bikes can provide you with endless miles of fun with your family and friends. </p>
+         
+      <div class="input-box button">
+          <input type="submit" name="" value="Back">
+          <a href="model3.html" value="Back"></a>
 
- <tr> {% for sender in senders %}
-      
-            <td> <a >{{sender.name}}</a></td>
-            <td>{{sender.address}}</td>
-      <td>{{sender.email}}</td>
-    </tr> {% endfor %}
-</table>
+      </form>
     </div>
   </div>
 

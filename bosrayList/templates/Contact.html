@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
@@ -215,7 +214,7 @@ nav {
 
 nav ul {
   text-align: center;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255,255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
 }
 
@@ -239,29 +238,6 @@ nav ul li a:hover {
   color: black;
 }
 
-#listable {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-#listable td, #listable th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-#listable tr:nth-child(even){background-color: #f2f2f2;}
-
-#listable tr:hover {background-color: #ddd;}
-
-#listable th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #616161;
-  color: white;
-}
-
 
 </style>
 
@@ -277,15 +253,15 @@ nav ul li a:hover {
 <body>
   <nav>
     <div class="navbar">
-      <div class="logo"><a href="/homepage">CCyling</a></div>
+      <div class="logo"><a href="#">CCyling</a></div>
       <ul class="menu">
-   <li><a href="/home_page"> Home </a></li>
-    <li><a href="/registration"> Profile</a></li>
-    <li><a href="/model3"> Program</a></li>
-    <li><a href="/models4">Location</a></li>
-    <li><a href="/models5"> Feeback</a></li>
-     <li><a href="/Contact">|Contact</a></li>
-     <li><a href="/About">  |About</a></li>
+   <li><a href="bosrayList/homepage.html"> Home </a></li>
+    <li><a href="bosrayList/registration.html"> Profile</a></li>
+    <li><a href="bosrayList/model3.html"> Program</a></li>
+    <li><a href="bosrayList/models4.html">Location</a></li>
+    <li><a href="bosrayList/models5.html"> Feeback</a></li>
+     <li><a href="bosrayList/Contact.html">|Contact</a></li>
+     <li><a href="bosrayList/About.html">  |About</a></li>
       </ul>
     </div>
   </nav>
@@ -293,47 +269,44 @@ nav ul li a:hover {
 </body>
 </html>
 <body>
-  <div class="container">
-    <div class="title">Registration</div>
-    <div class="content">
-      <form method="POST" action="registration.html">
-        <div class="user-details">
-          <div class="input-box">
-            <span class="details">Full Name</span>
-            <input type="text" id= "_name_" placeholder="Enter your name" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Address</span>
-            <input type="text" id= "_address_" placeholder="Enter your address" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Email</span>
-            <input type="text" id= "_email_" placeholder="Enter your email" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Phone Number</span>
-            <input type="text" id= "_number_" placeholder="Enter your number" required>
-          </div>
-        </div>
-        <div class="button">
-          <input type="submit" value="Register">
-          <a href="model3.html" value="Register"></a>
-        </div>
-      </form>
-      <table id="listable" name="tr">
-      <th>Full Name</th>
-      <th>Email</th>
-      <th>Phone</th>
+<body style="background-image: url(cover2.jpg)">
+    <div class="container">
+      <form action="model3.html">
+        <header>
+            <h1>Contact Us</h1>
+        
+        </header>
+        <div class="content">
+            <div class="content-form">
+                <section>
+                    <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
+                    <h2>address</h2>
+                    <p>
+                        Barangay San Andres 2,  <br>
+                        Dasmarinas, Cavite <br>
+                        Philippines
+                    </p>
+                </section>
 
- <tr> {% for sender in senders %}
-      
-            <td> <a >{{sender.name}}</a></td>
-            <td>{{sender.address}}</td>
-      <td>{{sender.email}}</td>
-    </tr> {% endfor %}
-</table>
-    </div>
-  </div>
+                <section>
+                    <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
+                    <h2>Phone</h2>
+                    <p>09156520159</p>
+                </section>
 
+                <section>
+                    <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+                    <h2>E-mail</h2>
+                    <p>ryanbalota040@gmail.com</p>
+                </section>
+            </div>
+        </div>
+
+<div class="input-box button">
+          <input type="submit" name="" value="Back">
+          <a href="model3.html" value="Back"></a>
+
+    </form>
+    </div>    
 </body>
 </html>

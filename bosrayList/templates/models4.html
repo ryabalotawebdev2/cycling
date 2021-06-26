@@ -1,0 +1,282 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link url(https://fonts.googleapis.com/css?family=Open+Sans);>
+<style>
+html {
+  height:100%;
+  background-image: white to right top, #8e44ad 0%, #3498db 100%;
+ background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+nav {
+  max-width: 1000px;
+  mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
+  margin: 0 auto;
+  padding: 0px 0;
+}
+
+nav ul {
+  text-align: center;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  padding: 18px;
+  font-family: "Open Sans";
+  text-transform:uppercase;
+  color: rgba(0, 35, 122, 0.5);
+  font-size: 18px;
+  text-decoration: none;
+  display: block;
+}
+
+nav ul li a:hover {
+  box-shadow: 0 0 10px black, inset 0 0 1px orange ;
+  background: rgba(255, 255, 255, 0.1);
+  color: black;
+}
+html{
+  background-color: wheat;
+}
+
+body{
+  background-color:white;
+  font-family: Rockwell, Georgia, serif;
+  max-width: 1000px;
+  width:90%;
+  margin: 0 auto;
+  box-shadow: 4px 4px 8px rgba(0,0,0.15)
+}
+h1{
+  background-color: tomato;
+  color: white;
+  text-align: center;
+  padding:6px;
+}
+.column{
+  width:50%;
+  float:left;
+  padding:2%;
+  box-sizing:border-box;
+}
+.column{
+  padding:3%;
+}
+/*clear-fix the parent of column because it collapsed!  */
+form:after{
+  content:'';
+  display:block;
+  clear:both;
+}
+
+/* FORM STUFF BEGINS HERE */
+form{
+  font-size:110%
+}
+label{
+  display:block;
+  color:saddlebrown;
+  margin:16px 0 3px;
+}
+fieldset label{
+  display:inline-block;
+  font-size:85%;
+  font-family: Calibri, sans-serif;
+}
+
+
+input[type=text],
+input[type=email],
+input[type=address],
+textarea,
+select{
+  width:100%;
+  padding:5px;
+  box-sizing:border-box;
+  background-color:cornsilk;
+  border: solid 1px tan;
+  font-family:'Lucida Console', monospace;
+}
+textarea{
+  resize: vertical;
+  min-height: 70px;
+}
+fieldset{
+  border:none;
+  margin:20px 0 ;
+  padding:10px 0;
+  border-bottom: 1px solid tan;
+}
+
+/* BUTTONS */
+input[type=submit]{
+  background-color:forestgreen;
+  color:white;
+  border:none;
+  padding: 6px 20px;
+  font-size:110%;
+  border-radius:10px;
+  font-family: Rockwell, georgia, serif;
+}
+/* Reset Button: minimize the appearance */
+input[type=reset]{
+  background-color:transparent;
+  border:none;
+  text-decoration:underline;
+  cursor:pointer;
+  margin:20px 0;
+  color:olive;
+}
+
+/* hovers and tabs */
+input[type=text]:hover,
+input[type=email]:hover{
+  background-color:khaki;
+}
+input[type=text]:focus,
+input[type=email]:focus{
+  outline: 2px solid tan;
+}
+input[type=sumbit]:hover,
+input[type=submit]:focus{
+  background-color:limegreen;
+}
+/* responsive bonus round */
+@media screen and (min-width:450px){
+/*  2col  */
+  .column{
+    width:50%;
+    float:left;
+    padding:3%;
+    box-sizing:border-box;
+  }
+}
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+</style>
+</head>  
+
+ <nav>
+  <ul>
+    <li><a href="bosrayList/homepage.html"> Home </a></li>
+    <li><a href="bosrayList/registration.html"> Profile</a></li>
+    <li><a href="bosrayList/model3.html"> Program</a></li>
+    <li><a href="bosrayList/models4.html">Location</a></li>
+    <li><a href="bosrayList/models5.html"> Feeback</a></li>
+     <li><a href="bosrayList/Contact.html">|Contact</a></li>
+     <li><a href="bosrayList/About.html">  |About</a></li>
+  </ul>
+</nav>
+
+  
+<table id="bgf" name="tr">
+<form method="post" action="/bosrayList/{{ list.id }}/add_item">
+<h1>CCYLING</h1>
+  
+  <fieldset>
+  <div class="column">
+    <label for="your_event">Event_Type</label>
+    <input type="text" id="_your_event_" name="your_event"/>
+
+
+    <label for="your_Time">Place</label>
+    <input type="address" id="_your_place_" name="your_place" />
+
+    <div class="dropdown">
+  <button class="dropbtn">Sample Places</button>
+  <div class="dropdown-content">
+    <a href="https://www.google.com/maps/place/Kaybiang+Tunnel,+Maragondon,+Cavite/@14.2317725,120.6308323,15.84z/data=!4m5!3m4!1s0x33bd8ebaf83bb751:0x9d62fcd2f0d407eb!8m2!3d14.2339658!4d120.6329677">Kaybiang Tunnel</a>
+    <a href="https://www.google.com/maps/place/Aguinaldo+Shrine+and+Museum/@14.4451027,120.9047174,17z/data=!3m1!4b1!4m5!3m4!1s0x3397d2b0066cc2e3:0x886b4bb2f5360f36!8m2!3d14.4451027!4d120.9069061">Aguinaldo Shrine</a>
+    <a href="https://www.google.com/maps/place/Kawayan+Cove/@14.106131,120.6274543,17z/data=!3m1!4b1!4m5!3m4!1s0x33bd9166423c8ef1:0xaa71a817d9a0b90e!8m2!3d14.106131!4d120.629643">Kawayan Cove</a>
+    <a href="https://www.google.com/maps/place/Caylabne+Bay+Resort/@14.2729501,120.6459841,17z/data=!3m1!4b1!4m5!3m4!1s0x3397cd338d1217c1:0xede8d83e06235d1b!8m2!3d14.2729501!4d120.6481728">Caylabne</a>
+    <a href="https://www.google.com/maps/place/People's+Park+in+the+Sky/@14.1416667,121.0197557,17z/data=!3m1!4b1!4m5!3m4!1s0x33bd7a50279ccecb:0xa2d2549c452ac1e8!8m2!3d14.1416667!4d121.0219444">People's Parl in the Sky</a>
+    <a href="https://www.google.com/maps/place/Twin+Lakes+Hotel/@14.5674343,121.2047724,13.58z/data=!4m8!3m7!1s0x33bd77874fe442b9:0xca87fdbf74e7da5a!5m2!4m1!1i2!8m2!3d14.0678262!4d120.8576354">Twin Lakes</a>
+    <a href="https://www.google.com/maps/place/Calatagan,+Batangas/@14.5674343,121.2047724,13.58z/data=!4m5!3m4!1s0x33bdb0a71631da4d:0x45efc96d8f621392!8m2!3d13.8645656!4d120.6314948">Calatagan</a>
+    <a href="https://www.google.com/maps/place/Matabungkay+Beach/@14.5674343,121.2047724,13.58z/data=!4m5!3m4!1s0x33bdbe80d6b98973:0xdc3ea2325e5144a!8m2!3d13.9615946!4d120.6144163">Matabungkay</a>
+  </div> 
+    </select>
+    
+</div>
+     
+    </fieldset>
+
+
+{% csrf_token %}
+<tr>
+<td colspan="10" align="center">
+<input style="color: black"type="submit" value="Submit">
+<input style="color: black"type="reset" value="clear data">
+</td>
+</tr>
+
+  
+    <table id="listTable" name=tr>
+  <caption>List Participants</caption>
+  <tr>
+     <th>participants</th>
+    <th>category</th>
+    <th>eventype</th>
+        </tr>
+       <tr>
+       {% for item in list.item_set.all %} 
+       <! -- {{ forloop.counter }}:  -->
+        <td>{{ item.name }}</td>
+        <td>{{ item.cate }}</td>
+        <td>{{ item.type}}</td>
+   
+          </tr>
+        {% endfor %}
+    </table>   
+</html>
+
+ 

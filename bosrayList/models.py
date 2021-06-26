@@ -2,54 +2,54 @@ from django.db import models
 
 
 
+
 class Participant(models.Model):
-	name = models.CharField(max_length=50,  default='')
-	address = models.CharField(max_length=50,  default='')
-	email= models.EmailField(default='')
+    name= models.CharField(max_length=50, default='')
+    address = models.CharField(max_length=64)
+    email = models.CharField(max_length=50, default='')
+    number = models.CharField(max_length=50, default='')
+   
+
+    def __str__(self):
+        return self.name
+
+class Profile(models.Model):
+    user01 = models.CharField(max_length=50, default='')
+    email01 = models.EmailField(default='')
+  
+
+    def __str__(self):
+        return self.name
 	
-	def __str__(self):
-		return self.name
 
-class Membership(models.Model):
-	participant = models.ForeignKey(Participant, on_delete=models.CASCADE)
-	age= models.CharField(max_length=50,  default='')
-	gender= models.CharField(max_length=50,  default='')
-	choices=('M', 'Male'),('F', 'Female')
-	numbers = models.CharField(max_length=64)
-	team = models.CharField(max_length=64)
-
-	def __str__(self):
-		return self.name
-	
-
-class Event(models.Model):
+class Program(models.Model):
     partcipant = models.ForeignKey(Participant, on_delete = models.CASCADE)
-    eventtype = models.CharField(max_length=50,  default='')
-    category = models.CharField(max_length=50,  default='')
-    details = models.CharField(max_length=50,  default='')
-
+    your_kilometer = models.CharField(max_length=50, default='')
+    catetype = models.CharField(max_length=50, default='')
+    your_kilometer = models.CharField(max_length=50, default='')
+    your_gender = models.CharField(max_length=50, default='')
+    team = models.CharField(max_length=50, default='')
+    yourage = models.CharField(max_length=50, default='')
+    your_name = models.CharField(max_length=50, default='')
+    
     def __str__(self):
     	return self.name
 
-class Location(models.Model):
-	event  = models.ForeignKey(Event, on_delete=models.CASCADE)
-	time_date = models.DateTimeField(null=True, blank=True)
-	location = models.CharField(max_length=50,  default='')
+class Schedule(models.Model):
+    partcipant = models.ForeignKey(Participant, on_delete = models.CASCADE)
+    your_event = models.CharField(max_length=50, default='')
+    your_place= models.CharField(max_length=50, default='')
 
-	def __str__(self):
-		return self.name
+    def __str__(self):
+        return self.name
 
-
-class Status(models.Model):
-    status_health = models.CharField(max_length=50,  default='')
-    remarks = models.CharField(max_length=50,  default='')
-    event = models.ForeignKey(Event, on_delete=models.CASCADE)
-
+class Feedback(models.Model):
+    feedback = models.CharField(max_length=50,  default='')
+    
     def __str__(self):
     	return self.name
 
-
-
+   
 
     
 

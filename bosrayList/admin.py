@@ -1,10 +1,10 @@
 from django.contrib import admin
-from .models import Participant,Membership,Event,Location,Status
+from .models import Participant,Profile,Program,Schedule,Feedback
 
 admin.site.register(Participant)
-admin.site.register(Membership)
-admin.site.register(Event)
-admin.site.register(Location)
-admin.site.register(Status)
+admin.site.register(Profile)
+admin.site.register(Program)
+admin.site.register(Schedule)
+admin.site.register(Feedback)
 
 # Register your models here.
