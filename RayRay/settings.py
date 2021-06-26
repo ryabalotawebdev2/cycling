@@ -26,7 +26,7 @@ SECRET_KEY = '_%iq$8!$#ltb!!ofs3dy+3^b-ce7+7r(h@_7u80en_o9568j9!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ccycling.ph']
+ALLOWED_HOSTS = ['balotawebdev2.pythonanywhere.com']
 
 
 # Application definition
